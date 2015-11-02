@@ -14,7 +14,10 @@
   "version": "1.0.0",
   "description": "Adventure App to help with travelling and planning trips. My first app using the MEAN stack. ",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.2.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
