@@ -1,22 +1,22 @@
-// ROUTES
-myApp.config(['$routeProvider',
-    function ('$routeProvider') {
-        $routeProvider.
-        when('/', {
-            templateUrl: '/client/pages/home.html',
-            controller: 'homeController'
-        }).
-        when('/login', {
-            templateUrl: 'client/pages/login.html',
-            controller: 'homeController'
-        }).
-        when('/register', {
-            templateUrl: 'client/pages/register.html',
-            controller: 'registerController'
-        }).
-        otherwise({
-            redirectTo:'/'
-        });
-    }]);
-
+myApp.config(function($stateProvider, $urlRouterProvider) {
+  //
+  // For any unmatched url, redirect to /
+  $urlRouterProvider.otherwise("/");
+  //
+  // Now set up the states
+  $stateProvider
+    .state('login', {
+      url: "/",
+      templateUrl: "client/pages/home.html",
+      controller: "client/js/controllers.js"
+    })
+    .state('login', {
+      url: "/login",
+      templateUrl: "client/pages/login.html",
+      controller: "client/js/controllers.js"
+    })
+    .state('register', {
+      url: "/register",
+      templateUrl: "client/pages/register.html"
+    });
 });

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us" ng-app="myApp">
-
 <head>
     <title>Adventure App</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -8,40 +7,28 @@
 
     <!-- load bootstrap and angular-->
     <link rel="stylesheet" href="\bower_components\bootstrap\dist\css\bootstrap.min.css" />
-
-    <!-- load additional javascript--->
     <script src="/bower_components/angular/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+    <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 
-    <link rel="stylesheet" href="client/css/style.css"/>
+    <link rel="stylesheet" href="client/css/style.css" />
     <script src="client/js/app.js"></script>
-    <script src="client/js/routes.js"></script>
-    <script src="client/js/services.js"></script>
-    <script src="client/js/controllers.js"></script>
-    <script src="client/directives/directives.js"></script>
 </head>
-
 <body>
-
     <header>
-
-
-
         <nav class="navbar" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand nav" href="/index.html">Adventure App</a>
+                    <a  class="navbar-brand nav" href="/index.html">Adventure App</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                    <li><a href="#/register">Join now!</a></li>
+                    <li><a ui-sref="login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                    <li><a ui-sref="register">Join now!</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
     <div class="container">
-        <div ng-view></div>
+        <div ui-view></div>
     </div>
 
 
@@ -52,11 +39,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 
     <script>
-        $.backstretch(["https://images.unsplash.com/photo-1446419385500-203d54c0c460?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925", "https://images.unsplash.com/photo-1446419184424-b8178b61777f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=8eae0517977861bf37910f85996fffeb", "https://images.unsplash.com/photo-1446412188182-03cef3c4083a?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925"], {
+        $.backstretch(["https://images.unsplash.com/photo-1440557958969-404dc361d86f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=14acb1c25a16beae8ede71349b1c5cba", "https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375", "https://images.unsplash.com/photo-1416862291207-4ca732144d83?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375"],["https://images.unsplash.com/photo-1418854982207-12f710b74003?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=b3e57834e66f0a956a107c37bc25bb12"],["https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=6c95a874fb8ad2ed9ff9910a34ab5647"], {
             duration: 3000,
             fade: 750
         });
     </script>
 </body>
-
 </html>

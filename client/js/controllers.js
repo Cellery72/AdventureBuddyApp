@@ -5,7 +5,7 @@ myApp.controller('homeController', ['$scope', 'mainService', function($scope, ma
     
 }]);
 
-myApp.controller('homeController', ['$scope', '$resource', '$routeParams', 'mainService', function($scope, $resource, $routeParams, mainService) {
+myApp.controller('loginController', ['$scope', '$resource', '$routeParams', 'mainService', function($scope, $resource, $routeParams, mainService) {
     
    
    
