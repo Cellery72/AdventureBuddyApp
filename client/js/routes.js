@@ -3,7 +3,7 @@ myApp.config(['$routeProvider',
     function ('$routeProvider') {
         $routeProvider.
         when('/', {
-            templateUrl: 'client/pages/home.html',
+            templateUrl: '/client/pages/home.html',
             controller: 'homeController'
         }).
         when('/login', {

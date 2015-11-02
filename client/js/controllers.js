@@ -3,13 +3,9 @@ myApp.controller('homeController', ['$scope', 'mainService', function($scope, ma
     
     $scope.city = cityService.city;
     
-    $scope.$watch('city', function() {
-       cityService.city = $scope.city; 
-    });
-    
 }]);
 
-myApp.controller('loginController', ['$scope', '$resource', '$routeParams', 'mainService', function($scope, $resource, $routeParams, mainService) {
+myApp.controller('homeController', ['$scope', '$resource', '$routeParams', 'mainService', function($scope, $resource, $routeParams, mainService) {
     
    
    

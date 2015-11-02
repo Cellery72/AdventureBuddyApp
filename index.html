@@ -13,6 +13,7 @@
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
 
+    <link rel="stylesheet" href="client/css/style.css"/>
     <script src="client/js/app.js"></script>
     <script src="client/js/routes.js"></script>
     <script src="client/js/services.js"></script>
@@ -23,14 +24,17 @@
 <body>
 
     <header>
-        <nav class="navbar navbar-clear">
+
+
+
+        <nav class="navbar" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/index.html">Adventure App</a>
+                    <a class="navbar-brand nav" href="/index.html">Adventure App</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><i class="fa fa-home"></i> Login</a></li>
-                    <li><a href="#/register"><i class="fa fa-home"></i> Register</a></li>
+                    <li><a href="#/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+                    <li><a href="#/register">Join now!</a></li>
                 </ul>
             </div>
         </nav>
@@ -40,15 +44,18 @@
         <div ng-view></div>
     </div>
 
-    
-    
-    
+
+
+
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
 
     <script>
-        $.backstretch(["https://images.unsplash.com/photo-1446419385500-203d54c0c460?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925","https://images.unsplash.com/photo-1446419184424-b8178b61777f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=8eae0517977861bf37910f85996fffeb","https://images.unsplash.com/photo-1446412188182-03cef3c4083a?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925"],{duration: 3000,fade: 750});
+        $.backstretch(["https://images.unsplash.com/photo-1446419385500-203d54c0c460?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925", "https://images.unsplash.com/photo-1446419184424-b8178b61777f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=8eae0517977861bf37910f85996fffeb", "https://images.unsplash.com/photo-1446412188182-03cef3c4083a?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925"], {
+            duration: 3000,
+            fade: 750
+        });
     </script>
 </body>
 
