@@ -1,22 +1,22 @@
 <div class="container">
-    <div clas="row">
-        <div class="col-xs-12">
-            <h1 style="text-align:center;">Where have you always dreamt of travelling to?</h1>
-            <h2 style="text-align:center;">Plan your ideal travel vacation right now!</h2>
-        </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-xs-4 col-xs-offset-4" data-animation-effect="fadeIn">
-            <div class="form-group">
-                <input type="text" ng-model="username" class="form-control" />
-                <input type="text" ng-model="password" class="form-control" />
-                <a href="#/forecast" class="btn btn-primary">Login</a>
+   
+    <div id="overlay">        
+        <div clas="row">
+            <div class="col-xs-12">
+                <h1>Where have you always dreamt of travelling to?</h1>
+                <h2>Plan your ideal travel vacation right now!</h2>
             </div>
         </div>
-    </div>
-
-
-
-
-</div>
+        <hr>
+        <div class="row">
+            <div class="col-xs-4 col-xs-offset-4" data-animation-effect="fadeIn">
+                <div id="myForm" class="form-group">
+                    <input type="text" ng-model="username" class="form-control floating-label" placeholder="username" />
+                    <input type="text" ng-model="password" class="form-control floating-label" placeholder="password" />
+                    <a href="#/forecast" class="btn btn-danger">Login</a>
+                </div>
+            </div>
+        </div>
+        
+    </div> <!-- overlay -->
+</div> <!-- container -->
