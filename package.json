@@ -17,6 +17,7 @@
   "description": "Adventure App to help with travelling and planning trips. My first app using the MEAN stack. ",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mongoose": "^4.2.4",
     "passport-local": "^1.0.0"
