@@ -3,12 +3,11 @@ var myApp = angular.module('myApp', ['ui.router']);
 myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
 
     $urlRouterProvider.otherwise('/');
-
-
-
     // HOME STATES AND NESTED VIEWS ========================================
-    $stateProvider.state('app', {
+    $stateProvider
+        .state('app', {
             abstract: true,
+            url:'',
             views: {
                 nav: {
                     templateUrl: 'client/header/header.html',
@@ -25,13 +24,18 @@ myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvid
             }
         })
         .state('app.home', {
-            url: '',
+            url: '/',
             templateUrl: 'client/content/home.html',
             controller: 'HomeController as Home'
         })
         .state('app.login', {
             url: '/login',
             templateUrl: 'client/content/login.html',
-            controller: 'HomeController as Home'
+            controller: 'LoginController as Login'
+        })
+        .state('app.register', {
+            url: '/register',
+            templateUrl: 'client/content/register.html',
+            controller: 'RegisterController as Register'
         });
 }]);
