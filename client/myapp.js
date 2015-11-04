@@ -25,7 +25,6 @@ myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvid
         })
         .state('app.home', {
             url: '/',
-            templateUrl: 'client/content/home.html',
             controller: 'HomeController as Home'
         })
         .state('app.login', {

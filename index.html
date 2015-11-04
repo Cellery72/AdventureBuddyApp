@@ -5,39 +5,30 @@
     <title>Adventure App</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
-
     <!-- load bootstrap and angular-->
     <link rel="stylesheet" href="\bower_components\bootstrap\dist\css\bootstrap.min.css" />
     <script src="\node_modules\angular\angular.min.js"></script>
     <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
-
-
     <!-- Material Design for Bootstrap -->
     <link href="/bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
     <link href="/bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="/bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
-
     <!-- Web Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
+    <!-- Style Sheet and Angular App -->
     <link rel="stylesheet" href="client/css/style.css" />
     <script src="client/myapp.js"></script>
 </head>
-
 <body>
     <div ui-view="nav"></div>
     <div ui-view></div>
     <div ui-view="footer"></div>
-
-
-
-
-
+    
+    <!-- JQuery and Backstretch JS -->
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
-
-
     <script>
         $.backstretch(["https://images.unsplash.com/photo-1440557958969-404dc361d86f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=14acb1c25a16beae8ede71349b1c5cba",
                        "https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375",
