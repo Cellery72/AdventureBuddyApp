@@ -10,15 +10,15 @@ myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvid
             url:'',
             views: {
                 nav: {
-                    templateUrl: 'client/header/header.html',
+                    templateUrl: 'public/header/header.html',
                     controller: 'NavController as Nav'
                 },
                 '': {
-                    templateUrl: 'client/content/home.html',
+                    templateUrl: 'public/content/home.html',
                     controller: 'ContentController as Content'
                 },
                 footer: {
-                    templateUrl: 'client/footer/footer.html',
+                    templateUrl: 'public/footer/footer.html',
                     controller: 'FooterController as Footer'
                 }
             }
@@ -29,12 +29,12 @@ myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvid
         })
         .state('app.login', {
             url: '/login',
-            templateUrl: 'client/content/login.html',
+            templateUrl: 'public/content/login.html',
             controller: 'LoginController as Login'
         })
         .state('app.register', {
             url: '/register',
-            templateUrl: 'client/content/register.html',
+            templateUrl: 'public/content/register.html',
             controller: 'RegisterController as Register'
         });
 }]);
