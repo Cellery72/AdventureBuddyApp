@@ -10,7 +10,9 @@ var db = mongoose(),
 	app = express(),
 	passport = passport();
 
-app.listen(config.port);
+var userController = require('./app/controllers/users.server.controller.js');
+
+app.listen(process.env.NODE_ENV);
 
 module.exports = app;
 console.log(process.env.NODE_ENV + ' server running at http://localhost:' + config.port);

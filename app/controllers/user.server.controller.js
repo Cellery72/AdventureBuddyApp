@@ -112,8 +112,6 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
 	);
 };
 
-
-
 exports.create = function(req, res, next) {	
 	var user = new User(req.body);
 	user.save(function(err) {

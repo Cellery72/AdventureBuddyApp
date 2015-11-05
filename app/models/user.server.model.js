@@ -13,8 +13,7 @@ var UserSchema = new Schema({
 	password: String,
 	provider: String,
 	providerId: String,
-	providerData: {},
-	todos: {}//we will use this in the next tutorial to store TODOs
+	providerData: {}
 });
 
 UserSchema.pre('save', 

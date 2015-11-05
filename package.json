@@ -18,7 +18,9 @@
   "main": "app.js",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "connect-flash": "^0.1.1",
     "express": "^4.13.3",
+    "express-session": "file:node_modules\\express-session",
     "mongoose": "^4.2.4",
     "passport-local": "^1.0.0"
   },
