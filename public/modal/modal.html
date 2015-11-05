@@ -1,0 +1,57 @@
+<form id="RegistrationForm" name="RegistrationForm" method="post" action="">
+    <div class="modal fade text-center" id="theModal">
+        <div class="modal-dialog">
+            <div class="modal-content panel panel-default">
+                <div class="panel-header modal-header">
+                    <button type="button" class="close" data-dismiss="modal">X</button>
+                    <h1 id="modalTitle">Edit Selected Employee</h1>
+                </div>
+                <div class="modal-body panel-body">
+                    <div class="row">
+                        <div class="col-xs-4">Title:</div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Enter Title" id="TextBoxTitle" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">First:</div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Enter First Name" id="TextBoxFirstname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">Surname:</div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Enter Surname" id="TextBoxLastname" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">Phone Number:</div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Enter Phone Number" id="TextBoxPhone" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">Email:</div>
+                        <div class="col-xs-8">
+                            <input type="text" placeholder="Enter Email" id="TextBoxEmail" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">Department:</div>
+                        <div class="col-xs-8">
+                            <select id="ddlDepts" name="ddlDepts" class="ddl form-control"></select>
+                        </div>
+                    </div>
+                    <input type="hidden" id="HiddenEntity" />
+                    <input type="hidden" id="AccessId" />
+                    <input type="hidden" id="HiddenId" />
+                </div>
+                <div class="panel-footer modal-footer top10pad">
+                    <input type="submit" id="buttonAction" class="btn btn-success" value="Update" />
+                    <input type="submit" id="buttonDelete" class="btn btn-danger" value="Delete" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

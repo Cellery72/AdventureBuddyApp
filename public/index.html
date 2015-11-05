@@ -1,29 +1,33 @@
 <!DOCTYPE html>
-<html lang="en-us" ng-app="myApp">
-
+<html lang="en-us" ng-app="app">
 <head>
     <title>Adventure App</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
+    
+    
+    
     <!-- load bootstrap and angular-->
     <link rel="stylesheet" href="\public\bower_components\bootstrap\dist\css\bootstrap.min.css" />
     <script src="\node_modules\angular\angular.min.js"></script>
     <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
     <!-- Material Design for Bootstrap -->
     <link href="/public/bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
     <link href="/public/bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="/public/bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+    
     <!-- Web Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
 
     <!-- Style Sheet and Angular App -->
     <link rel="stylesheet" href="/public/css/style.css" />
-    <script src="/public/myapp.js"></script>
+    <script src="/public/app.js"></script>
 </head>
 <body>
     <div ui-view="nav"></div>
-    <div ui-view></div>
+    <div ui-view="content"></div>
     <div ui-view="footer"></div>
     
     <!-- JQuery and Backstretch JS -->
@@ -32,13 +36,12 @@
     <script>
         $.backstretch(["https://images.unsplash.com/photo-1440557958969-404dc361d86f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=14acb1c25a16beae8ede71349b1c5cba",
                        "https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375",
-                       "https://images.unsplash.com/photo-1416862291207-4ca732144d83?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375",
+                       "https://images.unsplash.com/photo-1417086958796-c69f2affd4c1?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925",
                       "https://images.unsplash.com/photo-1418854982207-12f710b74003?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=b3e57834e66f0a956a107c37bc25bb12",
-                      "https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=6c95a874fb8ad2ed9ff9910a34ab5647"], {
+                      "https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=6c95a874fb8ad2ed9ff9910a34ab5647","https://images.unsplash.com/photo-1446735613357-27d998e3c429?fit=crop&fm=jpg&h=975&ixlib=rb-0.3.5&q=80&w=1925"], {
             duration: 3000,
             fade: 750
         });
     </script>
 </body>
-
 </html>
