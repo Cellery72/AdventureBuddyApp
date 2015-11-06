@@ -1,40 +1,47 @@
-var app = angular.module('app', ['ui.router']);
+  var myApp = angular.module('myApp', ["ui.router", "ui.bootstrap"])
+  myApp.config(function ($stateProvider, $urlRouterProvider) {
 
-myApp.config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
+      // For any unmatched url, send to /route1
+      $urlRouterProvider.otherwise("/");
+      $stateProvider
+          .state('home', {
+              url: '/',
+              views: {
+                  'content': {
+                      templateUrl: 'content/home.html',
+                      controller: "HomeController"
+                  }
+              }
+          });
+  });
+  myApp.controller("HomeController",
+      function ($scope, $uibModal) {
+          $scope.animationsEnabled = true;
+          $scope.open = function () {
 
-    $urlRouterProvider.otherwise('/');
-    // HOME STATES AND NESTED VIEWS ========================================
-    $stateProvider
-        .state('app', {
-            abstract: true,
-            url:'',
-            views: {
-                nav: {
-                    templateUrl: 'public/header/header.html',
-                    controller: 'NavController as Nav'
-                },
-                '': {
-                    templateUrl: 'public/content/home.html',
-                    controller: 'ContentController as Content'
-                },
-                footer: {
-                    templateUrl: 'public/footer/footer.html',
-                    controller: 'FooterController as Footer'
-                }
-            }
-        })
-        .state('app.home', {
-            url: '/',
-            controller: 'HomeController as Home'
-        })
-        .state('app.login', {
-            url: '/login',
-            templateUrl: 'public/content/login.html',
-            controller: 'LoginController as Login'
-        })
-        .state('app.register', {
-            url: '/register',
-            templateUrl: 'public/content/register.html',
-            controller: 'RegisterController as Register'
-        });
-}]);
+              var modalInstance = $uibModal.open({
+                  animation: $scope.animationsEnabled,
+                  templateUrl: 'modal/modal.html',
+                  controller: 'ModalController',
+                  size: 'sm'
+              });
+
+
+          };
+          $scope.toggleAnimation = function () {
+              $scope.animationsEnabled = !$scope.animationsEnabled;
+          };
+      });
+  myApp.controller("ModalController",
+      function ($scope, $uibModal) {
+
+
+          $scope.ok = function () {
+              $uibModalInstance.close();
+          };
+
+          $scope.cancel = function () {
+              $uibModalInstance.dismiss('cancel');
+          };
+
+      });
