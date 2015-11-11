@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en-us" ng-app="myApp">
 
 <head>
-    <title>Adventure App</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta charset="UTF-8">
+    <title>Adventure App</title>
+
     <!-- load bootstrap and angular-->
     <link rel="stylesheet" href="\public\bower_components\bootstrap\dist\css\bootstrap.min.css" />
     <script src="\node_modules\angular\angular.min.js"></script>
     <script src="/node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="/public/bower_components\angular-modal-service\dst\angular-modal-service.min.js"></script>
 
     <!-- Material Design for Bootstrap -->
     <link href="/public/bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
@@ -24,15 +26,14 @@
     <link rel="stylesheet" href="/public/css/style.css" />
     <script src="/public/app.js"></script>
 </head>
-
-<body>
+<body ng-controller="HomeController">
     <div ui-view="content"></div>
     <div id="footer">Copyright Justin Ellery 2015©</div>
 
     <!-- JQuery and Backstretch JS -->
     <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/public/content/myjs.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <script>
         $.backstretch(["https://images.unsplash.com/photo-1440557958969-404dc361d86f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=14acb1c25a16beae8ede71349b1c5cba",
                        "https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?fit=crop&fm=jpg&h=650&ixlib=rb-0.3.5&q=80&w=1375",
@@ -44,5 +45,4 @@
         });
     </script>
 </body>
-
 </html>
