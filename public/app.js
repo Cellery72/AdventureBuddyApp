@@ -17,54 +17,28 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
 myApp.controller('HomeController', function ($scope, $log, $uibModal) {
 
     $scope.animationsEnabled = true;
-    $scope.showRegisterForm = function () {
-        $('.loginBox').fadeOut('fast', function () {
-            $('.registerBox').fadeIn('fast');
-            $('.login-footer').fadeOut('fast', function () {
-                $('.register-footer').fadeIn('fast');
-            });
-            $('.modal-title').html('Register with');
-        });
-        $('.error').removeClass('alert alert-danger').html('');
-    };
-    $scope.showLoginForm = function () {
-        $('#loginModal .registerBox').fadeOut('fast', function () {
-            $('.loginBox').fadeIn('fast');
-            $('.register-footer').fadeOut('fast', function () {
-                $('.login-footer').fadeIn('fast');
-            });
 
-            $('.modal-title').html('Login with');
-        });
-        $('.error').removeClass('alert alert-danger').html('');
 
-    }
     $scope.openLoginModal = function () {
 
-        $scope.showLoginForm();
+
+
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
-            templateUrl: 'modal/modal.html',
-            controller: 'ModalInstanceCtrl',
-            resolve: {
-                items: function () {
-                    return $scope.items;
-                }
-            }
+            templateUrl: 'modal/myModal.html',
+            controller: 'ModalInstanceCtrl'
         });
-
-        modalInstance.result.then(function (selectedItem) {
+        modalInstance.result.then(function () {
 
         }, function () {
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
     $scope.openRegisterModal = function () {
-
-        $scope.showRegisterForm();
+        showRegisterForm();
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
-            templateUrl: 'modal/modal.html',
+            templateUrl: 'modal/myModal.html',
             controller: 'ModalInstanceCtrl',
             resolve: {
                 items: function () {
@@ -72,7 +46,6 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
                 }
             }
         });
-
         modalInstance.result.then(function (selectedItem) {
 
         }, function () {
@@ -83,16 +56,25 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
 
+    function showRegisterForm() {
+        $('.loginBox').fadeOut('fast', function () {
+            $('.registerBox').fadeIn('fast');
+            $('.login-footer').fadeOut('fast', function () {
+                $('.register-footer').fadeIn('fast');
+            });
+            $('.modal-title').html('Register with');
+        });
+        $('.error').removeClass('alert alert-danger').html('');
+
+    };
 });
 
 
 myApp.controller('ModalInstanceCtrl', ['$uibModalInstance', function ($scope, $uibModalInstace, close) {
 
-
     $scope.ok = function () {
         $uibModalInstance.close();
     };
-
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
