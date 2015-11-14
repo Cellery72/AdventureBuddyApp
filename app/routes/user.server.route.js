@@ -1,44 +1,61 @@
-var users = require('.../controllers/users.server.controller'),
-	passport = require('passport');
+var crypto = require('crypto');
+var express = require('express');
+module.exports = function (app) {
 
-module.exports = function(app) {
-	app.route('/users').post(users.create).get(users.list);
+    var Users = require('./controllers/user.server.controller');
+    app.use('/', express.static('./public'));
 
-	app.route('/users/:userId').get(users.read).put(users.update).delete(users.delete);
 
-	app.param('userId', users.userByID);
+    app.get('/', function (req, res) {
+        if (req.session.user) {
+            res.render('index', {
+                username: req.session.username,
+                msg: req.session.msg
+            });
+        } else {
+            req.session.msg = 'Access denied!';
+            res.redirect('/');
+        }
+    });
+    
+    
+    /**
+    app.get('/user', function (req, res) {
+        if (req.session.user) {
+            res.render('user', {
+                msg: req.session.msg
+            });
+        } else {
+            req.session.msg = 'Access denied!';
+            res.redirect('/login');
+        }
+    });
+    app.get('/register', function (req, res) {
+        if (req.session.user) {
+            res.redirect('/');
+        }
+        res.render('register', {
+            msg: req.session.msg
+        });
+    });
+    app.get('/login', function (req, res) {
+        if (req.session.user) {
+            res.redirect('/');
+        }
+        res.render('login', {
+            msg: req.session.msg
+        });
+    });
+    app.get('/logout', function (req, res) {
+        req.session.destroy(function () {
+            res.redirect('/login');
+        });
+    });
 
-	app.route('/register')
-		.get(users.renderRegister)
-		.post(users.register);
-
-	app.route('/login')
-		.get(users.renderLogin)
-		.post(passport.authenticate('local', {
-			successRedirect: '/',
-			failureRedirect: '/login',
-			failureFlash: true
-		}));
-
-	app.get('/logout', users.logout);
-
-	app.get('/oauth/facebook', passport.authenticate('facebook', {
-		failureRedirect: '/login',
-		scope:['email']
-	}));
-
-	app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
-		failureRedirect: '/login',
-		successRedirect: '/',
-		scope:['email']
-	}));
-
-	app.get('/oauth/twitter', passport.authenticate('twitter', {
-		failureRedirect: '/login'
-	}));
-
-	app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
-		failureRedirect: '/login',
-		successRedirect: '/'
-	}));
+    app.post('/register', Users.signup);
+    app.post('/user/update', Users.updateUser);
+    app.post('/user/delete', Users.deleteUser);
+    app.post('/login', Users.login);
+    app.get('/user/profile', Users.getUserProfile);
+    */
 };

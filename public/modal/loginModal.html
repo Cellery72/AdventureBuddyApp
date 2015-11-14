@@ -1,6 +1,6 @@
-<script type="text/ng-template" id="myModal.html">
-    <div ng-controller="ModalController" class="modal fade login" id="loginModal">
-        <div class="modal-dialog login animated">
+<script type="text/ng-template" id="modal/modal.html">
+    <div class="modal-dialog login" id="loginModal">
+        <div class="login animated">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -50,15 +50,11 @@
                 </div>
                 <div class="modal-footer">
                     <div class="forgot login-footer">
-                        <span>
-                            Looking to
-                            <a href="javascript: showRegisterForm();">create an account</a>
-                            ?
-                        </span>
+                        <span>Looking to <a href="" ng-click="showRegisterForm()">create an account</a>?</span>
                     </div>
                     <div class="forgot register-footer" style="display:none">
                         <span>Already have an account?</span>
-                        <a href="javascript: showLoginForm();">Login</a>
+                        <a ng-click="showLoginForm()">Login</a>
                     </div>
                 </div>
             </div>

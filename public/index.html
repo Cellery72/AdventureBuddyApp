@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us" ng-app="myApp">
 
 <head>
@@ -26,13 +26,19 @@
     <link rel="stylesheet" href="/public/css/style.css" />
     <script src="/public/app.js"></script>
 </head>
-<body ng-controller="HomeController">
+
+<body>
     <div ui-view="content"></div>
     <div id="footer">Copyright Justin Ellery 2015©</div>
 
+   
+
+
+
+
+
     <!-- JQuery and Backstretch JS -->
     <script src="/public/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/public/content/myjs.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
     <script>
         $.backstretch(["https://images.unsplash.com/photo-1440557958969-404dc361d86f?ixlib=rb-0.3.5&q=80&fm=jpg&w=1080&fit=max&s=14acb1c25a16beae8ede71349b1c5cba",
@@ -45,4 +51,5 @@
         });
     </script>
 </body>
+
 </html>

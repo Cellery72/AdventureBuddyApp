@@ -1,21 +1,13 @@
 var mongoose = require('mongoose'),
-	crypto = require('crypto'),
 	Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
 	name: String,
 	email: String,
-	username: {
-		type: String,
-		trim: true,
-		unique: true
-	},
-	password: String,
-	provider: String,
-	providerId: String,
-	providerData: {}
+	username: { type: String,unique: true },
+	hashed_password: String
 });
-
+/**
 UserSchema.pre('save', 
 	function(next) {
 		if (this.password) {
@@ -55,5 +47,5 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 		}
 	);
 };
-
+ */
 mongoose.model('User', UserSchema);
