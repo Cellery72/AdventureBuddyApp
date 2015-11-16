@@ -26,7 +26,8 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'modal/myModal.html',
-            controller: 'ModalInstanceCtrl'
+            controller: 'ModalInstanceCtrl',
+            size: 'sm'
         });
         modalInstance.result.then(function () {
 
@@ -35,7 +36,8 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
         });
     };
     $scope.openRegisterModal = function () {
-        showRegisterForm();
+       
+
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             templateUrl: 'modal/myModal.html',
@@ -52,6 +54,9 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
+
+
+
     $scope.toggleAnimation = function () {
         $scope.animationsEnabled = !$scope.animationsEnabled;
     };
