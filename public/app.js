@@ -12,6 +12,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
                     controller: "HomeController"
                 }
             }
+        })
+        .state('signup', {
+            url: '/signup',
+            views: {
+                'content': {
+                    templateUrl: '/public/content/signup.html',
+                    controller: "SignUpController"
+                }
+            }
+
         });
 });
 myApp.controller('HomeController', function ($scope, $log, $uibModal) {
@@ -36,7 +46,7 @@ myApp.controller('HomeController', function ($scope, $log, $uibModal) {
         });
     };
     $scope.openRegisterModal = function () {
-       
+
 
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
